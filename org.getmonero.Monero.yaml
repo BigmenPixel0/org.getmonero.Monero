@@ -34,19 +34,14 @@ modules:
           config-opts:
             - -DARCH=armv8-a
             - -DBUILD_TAG=linux-armv8
+            - -DGUI_VERSION_TAG=flatpak
         x86_64:
           config-opts:
             - -DARCH=default
     sources:
-      - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.3.1.tar.bz2
-        sha256: 045a84e343423a62ed617f200465b290267ff0a071375fdfc49ea02dcdb1a785
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
-          version-query: .tag_name
-          url-query: '"https://downloads.getmonero.org/gui/monero-gui-source-" + $version
-            + ".tar.bz2"'
+      - type: git
+        url: https://github.com/monero-project/monero-gui/
+        tag: v0.18.3.1
     modules:
       - shared-modules/libusb/libusb.json
 
