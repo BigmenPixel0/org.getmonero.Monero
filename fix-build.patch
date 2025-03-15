@@ -4,13 +4,13 @@ Date: Tue, 7 Jan 2025 15:40:28 +0100
 Subject: [PATCH] miniupnpc: fix build with gcc 14
 
 ---
- external/CMakeLists.txt | 1 +
+ monero/external/CMakeLists.txt | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/external/CMakeLists.txt b/external/CMakeLists.txt
+diff --git a/monero/external/CMakeLists.txt b/monero/external/CMakeLists.txt
 index 5b7f69a5684..538e4d21599 100644
---- a/external/CMakeLists.txt
-+++ b/external/CMakeLists.txt
+--- a/monero/external/CMakeLists.txt
++++ b/monero/external/CMakeLists.txt
 @@ -39,6 +39,7 @@ find_package(Miniupnpc REQUIRED)
  
  message(STATUS "Using in-tree miniupnpc")
