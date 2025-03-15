@@ -1,0 +1,21 @@
+From f14a73cea3964985542eb986ac6b8e1a78a29b67 Mon Sep 17 00:00:00 2001
+From: tobtoht <tob@featherwallet.org>
+Date: Tue, 7 Jan 2025 15:40:28 +0100
+Subject: [PATCH] miniupnpc: fix build with gcc 14
+
+---
+ external/CMakeLists.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/external/CMakeLists.txt b/external/CMakeLists.txt
+index 5b7f69a5684..538e4d21599 100644
+--- a/external/CMakeLists.txt
++++ b/external/CMakeLists.txt
+@@ -39,6 +39,7 @@ find_package(Miniupnpc REQUIRED)
+ 
+ message(STATUS "Using in-tree miniupnpc")
+ set(UPNPC_NO_INSTALL TRUE CACHE BOOL "Disable miniupnp installation" FORCE)
++set(UPNPC_BUILD_SHARED OFF CACHE BOOL "Disable building shared library" FORCE)
+ add_subdirectory(miniupnp/miniupnpc)
+ set_property(TARGET libminiupnpc-static PROPERTY FOLDER "external")
+ set_property(TARGET libminiupnpc-static PROPERTY POSITION_INDEPENDENT_CODE ON)
